@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="mb-3">
+        <label>Data start asigurare</label>
+        <input type="date" name="start_date" class="form-control" required
+               value="{{ date('Y-m-d', strtotime('+1 day')) }}" min="{{ date('Y-m-d') }}">
+    </div>
     <div class="container">
         <h1>Creează ofertă RCA</h1>
         <form method="POST" action="{{ route('offers.store') }}">
